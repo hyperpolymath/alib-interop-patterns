@@ -218,17 +218,17 @@ man:
     #!/usr/bin/env bash
     mkdir -p docs/man
     cat > docs/man/{{project}}.1 << EOF
-.TH RSR-TEMPLATE-REPO 1 "$(date +%Y-%m-%d)" "{{version}}" "RSR Template Manual"
-.SH NAME
-{{project}} \- RSR standard repository template
-.SH SYNOPSIS
-.B just
-[recipe] [args...]
-.SH DESCRIPTION
-Canonical template for RSR (Rhodium Standard Repository) projects.
-.SH AUTHOR
-Hyperpolymath <hyperpolymath@proton.me>
-EOF
+    .TH RSR-TEMPLATE-REPO 1 "$(date +%Y-%m-%d)" "{{version}}" "RSR Template Manual"
+    .SH NAME
+    {{project}} \- RSR standard repository template
+    .SH SYNOPSIS
+    .B just
+    [recipe] [args...]
+    .SH DESCRIPTION
+    Canonical template for RSR (Rhodium Standard Repository) projects.
+    .SH AUTHOR
+    Hyperpolymath <hyperpolymath@proton.me>
+    EOF
     echo "Generated: docs/man/{{project}}.1"
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -244,7 +244,7 @@ container-build tag="latest":
     fi
 
 # Run container
-container-run tag="latest" *args:
+container-run tag="latest" args="":
     nerdctl run --rm -it {{project}}:{{tag}} {{args}}
 
 # Push container image
@@ -264,10 +264,10 @@ ci: deps quality
 install-hooks:
     @mkdir -p .git/hooks
     @cat > .git/hooks/pre-commit << 'EOF'
-#!/bin/bash
-just fmt-check || exit 1
-just lint || exit 1
-EOF
+    #!/bin/bash
+    just fmt-check || exit 1
+    just lint || exit 1
+    EOF
     @chmod +x .git/hooks/pre-commit
     @echo "Git hooks installed"
 
