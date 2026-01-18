@@ -1,10 +1,10 @@
-= aLib Interop Patterns (alib-interop-patterns)
+= aLib Interop Patterns
 :toc: macro
 :toclevels: 3
 :sectanchors:
 :icons: font
 
-A cookbook of safe interop and boundary patterns for typed-to-JS ecosystems (ReScript, Melange), including optional runtime validation.
+A cookbook of safe interop and boundary patterns for the ReScript ecosystem (ReScript, Melange), with optional runtime validation.
 
 toc::[]
 
@@ -12,21 +12,18 @@ toc::[]
 Alpha.
 
 == Purpose
-Provide reviewed patterns for:
+Documentation-first patterns for:
 
-* default args and external bindings
-* boundary decoding/encoding (JSON, dynamic objects)
-* error handling across JS exceptions
+* external bindings (defaults, optionals, polymorphism)
+* untyped data boundaries (JSON/dynamic objects)
+* exception boundaries (JS errors)
 * “safe wrapper first” conventions
 
-This is documentation-first, implementation-second.
+This repo reduces pressure on compiler work by giving developers safe, reviewable patterns today.
 
 == Relationship to Proven
-Where runtime validation helps, patterns may demonstrate use of Proven.
-ReScript bindings exist as `@hyperpolymath/proven-rescript`. :contentReference[oaicite:3]{index=3}
-
-== Relationship to Melange + npm packaging reality
-Interop patterns should acknowledge practical build integration constraints in JS ecosystems, including how “stdlib artifacts” are packaged and consumed. :contentReference[oaicite:4]{index=4}
+Where runtime validation helps, patterns may demonstrate optional Proven entrypoints.
+No Proven dependency is required for using most patterns.
 
 == License
-(TODO)
+PLMP-1.0.0-or-later
