@@ -1,3 +1,32 @@
-= RSR template repo - see RSR_OUTLINE.adoc in root for general background and specification
+= aLib Interop Patterns (alib-interop-patterns)
+:toc: macro
+:toclevels: 3
+:sectanchors:
+:icons: font
 
-== This is your repo - don't forget to rename me!
+A cookbook of safe interop and boundary patterns for typed-to-JS ecosystems (ReScript, Melange), including optional runtime validation.
+
+toc::[]
+
+== Status
+Alpha.
+
+== Purpose
+Provide reviewed patterns for:
+
+* default args and external bindings
+* boundary decoding/encoding (JSON, dynamic objects)
+* error handling across JS exceptions
+* “safe wrapper first” conventions
+
+This is documentation-first, implementation-second.
+
+== Relationship to Proven
+Where runtime validation helps, patterns may demonstrate use of Proven.
+ReScript bindings exist as `@hyperpolymath/proven-rescript`. :contentReference[oaicite:3]{index=3}
+
+== Relationship to Melange + npm packaging reality
+Interop patterns should acknowledge practical build integration constraints in JS ecosystems, including how “stdlib artifacts” are packaged and consumed. :contentReference[oaicite:4]{index=4}
+
+== License
+(TODO)
